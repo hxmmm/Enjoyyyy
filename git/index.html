@@ -56,10 +56,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/Enjoyyyy/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/Enjoyyyy/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Enjoyyyy/img/crown.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/Enjoyyyy/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Enjoyyyy/img/crown.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/Enjoyyyy/images/logo.svg?v=5.1.4" color="#222">
@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hey!Enjoyyy">
 <meta property="og:description" content="Git入门Git 常用指令本地repo关联gitgit init git commit -m &amp;apos;init&amp;apos; git remote add origin git@github.com:xxx/xxx.git git push -u origin master 拷贝远程的Git repo到本地git clone git@github.com:xxx/xxx.git 将修改的本地文件">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-03T07:11:59.981Z">
+<meta property="og:updated_time" content="2018-05-15T07:48:19.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git指令整理">
 <meta name="twitter:description" content="Git入门Git 常用指令本地repo关联gitgit init git commit -m &amp;apos;init&amp;apos; git remote add origin git@github.com:xxx/xxx.git git push -u origin master 拷贝远程的Git repo到本地git clone git@github.com:xxx/xxx.git 将修改的本地文件">
@@ -99,7 +99,7 @@
     root: '/Enjoyyyy/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -185,15 +185,15 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
         
         <li class="menu-item menu-item-git">
-          <a href="/Enjoyyyy/git" rel="section">
+          <a href="/Enjoyyyy/git/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-git-square"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-git"></i> <br />
             
             Git
           </a>
@@ -237,7 +237,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hxmmm">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Enjoyyyy/uploads/ava.jpg">
+      <meta itemprop="image" content="/Enjoyyyy/img/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -306,11 +306,28 @@ git push -u origin master
 </code></pre><h4 id="拷贝远程的Git-repo到本地"><a href="#拷贝远程的Git-repo到本地" class="headerlink" title="拷贝远程的Git repo到本地"></a>拷贝远程的Git repo到本地</h4><pre><code>git clone git@github.com:xxx/xxx.git
 </code></pre><h4 id="将修改的本地文件提交到git"><a href="#将修改的本地文件提交到git" class="headerlink" title="将修改的本地文件提交到git"></a>将修改的本地文件提交到git</h4><pre><code>git status —— 查看一下状态
 git diff —— 查看具体修改了什么内容 (可省略，自己改的东西心理应该都有数..)
-git add -A —— 提交所有发生状态变化的文件
+git add . —— 提交所有发生状态变化的文件
 git commit -m &apos;xxxx&apos; 
 git pull —— 以防冲突（当你提交时，发现其他人已经提交的内容时）
 git push
-</code></pre><h4 id="查看commit日志"><a href="#查看commit日志" class="headerlink" title="查看commit日志"></a>查看commit日志</h4><pre><code>git log
+</code></pre><h4 id="查看commit日志"><a href="#查看commit日志" class="headerlink" title="查看commit日志"></a>查看commit日志</h4><pre><code>git log —— 每一个commit都有唯一的一个编码
+</code></pre><h4 id="查看操作日志"><a href="#查看操作日志" class="headerlink" title="查看操作日志"></a>查看操作日志</h4><pre><code>git reflog 
+</code></pre><h4 id="本地代码回退到某一个版本"><a href="#本地代码回退到某一个版本" class="headerlink" title="本地代码回退到某一个版本"></a>本地代码回退到某一个版本</h4><pre><code>git reset commit编码 —— 回退到指定commit版本
+git reset HEAD^ —— 回退到上一个commit版本
+git reset HEAD^^ —— 回退到上上个commit版本
+git reset HEAD~n —— 回退到往上第n个commit版本
+*( ^ --- 标识一个版本，可用多个)
+</code></pre><h4 id="代码回退到某一个版本"><a href="#代码回退到某一个版本" class="headerlink" title="代码回退到某一个版本"></a>代码回退到某一个版本</h4><pre><code>git reset commit编码 —— 回退到指定commit版本
+git reset HEAD^ —— 回退到上一个commit版本
+git reset HEAD^^ —— 回退到上上个commit版本
+git reset HEAD~n —— 回退到往上第n个commit版本
+*( ^ --- 标识一个版本，可用多个)
+</code></pre><hr>
+<h2 id="Git-分支"><a href="#Git-分支" class="headerlink" title="Git 分支"></a>Git 分支</h2><h4 id="创建新分支"><a href="#创建新分支" class="headerlink" title="创建新分支"></a>创建新分支</h4><pre><code>git checkout -b dev —— 创建并切换到dev分支
+(同 =&gt; git branch dev, git checkout dev)
+</code></pre><h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><pre><code>git checkout master —— 切换到主分支
+</code></pre><h4 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h4><pre><code>git branch -a —— 查看所有分支，包括本地和远程
+</code></pre><h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><pre><code>git checkout -d dev —— 删除dev分支
 </code></pre>
       
     </div>
@@ -321,49 +338,7 @@ git push
     
 
     
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>打发一点咯</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
 
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="../uploads/wechat_pay.png" alt="hxmmm 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    hxmmm
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://hxmmm.github.io/Enjoyyyy/git/" title="Git指令整理">https://hxmmm.github.io/Enjoyyyy/git/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
     
 
     <footer class="post-footer">
@@ -436,7 +411,7 @@ git push
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/Enjoyyyy/uploads/ava.jpg"
+                src="/Enjoyyyy/img/avatar.jpg"
                 alt="hxmmm" />
             
               <p class="site-author-name" itemprop="name">hxmmm</p>
@@ -465,22 +440,6 @@ git push
           
 
           
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="hxm941016@163.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-            </div>
-          
 
           
           
@@ -503,7 +462,7 @@ git push
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git入门"><span class="nav-number">1.</span> <span class="nav-text">Git入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-常用指令"><span class="nav-number">1.1.</span> <span class="nav-text">Git 常用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地repo关联git"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">本地repo关联git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拷贝远程的Git-repo到本地"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">拷贝远程的Git repo到本地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将修改的本地文件提交到git"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">将修改的本地文件提交到git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看commit日志"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">查看commit日志</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git入门"><span class="nav-number">1.</span> <span class="nav-text">Git入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-常用指令"><span class="nav-number">1.1.</span> <span class="nav-text">Git 常用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地repo关联git"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">本地repo关联git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拷贝远程的Git-repo到本地"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">拷贝远程的Git repo到本地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将修改的本地文件提交到git"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">将修改的本地文件提交到git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看commit日志"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">查看commit日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看操作日志"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">查看操作日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地代码回退到某一个版本"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">本地代码回退到某一个版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码回退到某一个版本"><span class="nav-number">1.1.0.7.</span> <span class="nav-text">代码回退到某一个版本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-分支"><span class="nav-number">1.2.</span> <span class="nav-text">Git 分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建新分支"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">创建新分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换分支"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">切换分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看所有分支"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">查看所有分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除分支"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">删除分支</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -533,15 +492,9 @@ git push
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -588,8 +541,6 @@ git push
   
 
 
-  
-
 
 
 
@@ -628,11 +579,6 @@ git push
   
   
     <script type="text/javascript" src="/Enjoyyyy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/Enjoyyyy/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
